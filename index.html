@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="dark"><title>크림슨 커넥트 · 몽고베리 혈액원</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"><style>
+:root{color-scheme:dark;--bg:#080406;--surf:#140a0e;--ink:#e8dad7;--mute:#948086;--red:#c8142f;--red2:#ee4a62;--line:#2b161b;--gold:#b08d57;--ok:#5fae85;--warn:#d3a04a;--bad:#ee4a62;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.7 "Noto Sans KR",system-ui,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#2a0510;z-index:40}
+h1,h2,h3{font-family:"Nanum Myeongjo",Georgia,serif;line-height:1.3;margin:0}
+.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:linear-gradient(90deg,#4a0714,#2a0510);border-bottom:1px solid #5a1020;display:flex;align-items:center;gap:10px;padding:10px 16px}
+header .lg{width:34px;height:34px;border-radius:50%;background:var(--red);display:grid;place-items:center;color:#fff}
+header b{font:800 17px "Nanum Myeongjo",serif;display:block;line-height:1.1}header small{font-size:11px;color:#d9a9b0}
+header a{margin-left:auto;color:#fff}
+section{max-width:720px;margin:0 auto;padding:36px 18px 4px}
+.hero{background:linear-gradient(160deg,#7d0d22,#2d0610 70%);border:1px solid #5a1020;border-radius:14px;padding:20px 18px;position:relative;overflow:hidden}
+.hero svg.bg{position:absolute;right:-18px;top:-10px;width:130px;height:130px;opacity:.14;fill:#fff}
+.seal{font-size:11px;border:1px solid #d9a9b0;color:#f0c9ce;border-radius:99px;padding:1px 10px;display:inline-block}
+h1{font-size:clamp(25px,7vw,34px);font-weight:800;margin:10px 0 6px;color:#fff}
+.hero p{margin:0;color:#e8c6cb;font-size:14px}
+.cta{display:block;background:#fff;color:#7d0d22;text-align:center;font-weight:800;border-radius:10px;padding:13px;margin-top:16px;text-decoration:none}
+.stat{display:flex;gap:18px;margin-top:14px;font-size:12px;color:#e8c6cb}.stat b{display:block;font:800 20px "Nanum Myeongjo",serif;color:#fff}
+.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.menu a{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:12px 4px 9px;text-align:center;color:var(--ink);text-decoration:none;font-size:12px}
+.menu a .ic{display:block;margin:0 auto 4px;color:var(--red2)}
+.warn{margin-top:14px;border:1px solid var(--red);background:#3a0a1655;border-radius:8px;padding:11px 14px;font-size:13.5px}.warn b{color:var(--red2)}
+h2{font-size:21px;margin-bottom:6px}.sub{color:var(--mute);font-size:13px;margin:0 0 16px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:16px}
+.shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.vial{text-align:center}
+.tube{height:104px;border:2px solid var(--line);border-radius:10px 10px 26px 26px;position:relative;overflow:hidden;background:#080406}
+.tube i{position:absolute;left:0;right:0;bottom:0;transition:height .9s cubic-bezier(.2,.8,.2,1)}
+.vial strong{display:block;font:700 17px "Nanum Myeongjo",serif;margin-top:6px}.vial small{font-size:11px;font-weight:700}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--mute);margin-top:12px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.bn{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.bn div{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:12px}
+.bn b{display:block;font-size:14px;color:var(--red2);margin-bottom:2px}.bn span{font-size:12.5px;color:var(--mute);line-height:1.5;display:block}
+label{display:block;font-size:13px;font-weight:500;margin:12px 0 4px}
+input,select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#080406;color:var(--ink);font:inherit}
+input[type=range]{padding:0;accent-color:var(--red2)}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--red2);outline-offset:2px}
+button{background:var(--red);color:#fff;border:0;border-radius:10px;padding:13px 18px;font:700 15px "Noto Sans KR",sans-serif;cursor:pointer;margin-top:16px;width:100%}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;cursor:pointer}.chk input{width:20px;height:20px;margin-top:2px;accent-color:var(--red)}
+#res,#ticket,#tier{margin-top:16px}
+.res{padding:14px;border-radius:8px;font-weight:500;border:1px solid}
+.ticket{border:2px dashed var(--gold);border-radius:12px;padding:18px;background:var(--surf)}.ticket h3{color:var(--gold);font-size:18px}
+.ticket dl{display:grid;grid-template-columns:78px 1fr;gap:6px;margin:12px 0 0;font-size:14px}.ticket dt{color:var(--mute)}.ticket dd{margin:0;font-weight:500}
+.ticket .no{font:700 24px "Nanum Myeongjo",serif;letter-spacing:2px}
+.deny{border:2px solid var(--red);border-radius:12px;padding:18px;background:#3a0a1666}
+.deny h3{color:var(--red2);font-size:22px;transform:rotate(-2deg);border:3px solid var(--red2);display:inline-block;padding:2px 14px;margin-bottom:12px}
+.deny p{margin:0 0 8px;font-size:14px}.deny small{color:var(--mute)}
+.row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row b{display:block}.row span{font-size:13px;color:var(--mute)}
+.tag{font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;color:#fff;height:fit-content;white-space:nowrap;font-style:normal}
+.tier{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);opacity:.45}.tier.on{opacity:1}.tier:last-child{border:0}
+.tier i{font:800 20px "Nanum Myeongjo",serif;color:var(--gold);font-style:normal;text-align:center}.tier b{display:block}.tier span{font-size:13px;color:var(--mute)}
+.fam{display:grid;gap:10px}.fam .card{display:flex;gap:14px;align-items:flex-start}
+.av{flex:none;width:52px;height:52px;border-radius:50%;background:#2a0810;border:1px solid var(--red);color:var(--red2);display:grid;place-items:center;font:700 20px "Nanum Myeongjo",serif}
+.fam h3{font-size:16px}.fam p{margin:2px 0 0;font-size:13px;color:var(--mute)}.fam .cr{color:var(--gold);font-size:12.5px;line-height:1.55;margin-top:6px}
+.bar{display:inline-block;background:var(--ink);height:.9em;width:5em;vertical-align:middle;border-radius:2px}
+#hint{display:none;color:var(--red2);font-size:12px;margin-top:6px}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:500}details p{margin:8px 0 0;color:var(--mute);font-size:14px}
+footer{max-width:720px;margin:36px auto 0;padding:20px 18px;font-size:12px;color:var(--mute);border-top:1px solid var(--line);line-height:1.8}footer a{color:var(--mute)}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#12080b;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabs a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 0 8px;font-size:11px;color:var(--mute);text-decoration:none}.tabs a:first-child{color:var(--red2)}
+.doc{background:#fbf6f0;color:#2a1a1a;border-radius:6px;padding:18px;margin-top:14px;font:13px/1.8 "Nanum Myeongjo",serif}
+.doc h3{text-align:center;font-size:17px;margin-bottom:10px;color:#6b0f1d}.doc p{color:#2a1a1a;margin:6px 0;font-size:13px}
+.doc .sg{display:flex;justify-content:space-between;margin-top:18px;border-top:1px solid #b9a898;padding-top:8px}
+#sec{position:fixed;inset:0;z-index:50;background:#020102;overflow:auto;display:none;padding:calc(env(safe-area-inset-top,0px) + 20px) 18px calc(env(safe-area-inset-bottom,0px) + 30px)}
+#sec .in{max-width:640px;margin:0 auto}
+#sec h2{color:var(--red2)}
+#sec .log{border-left:2px solid var(--red);padding:2px 0 2px 12px;margin:14px 0;font-size:14px}
+#sec .log small{color:var(--mute);display:block}
+#sec table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+#sec td,#sec th{border-bottom:1px solid var(--line);padding:7px 4px;text-align:left}
+#sec th{color:var(--mute);font-weight:500}
+#sec .note{background:#120a0d;border:1px dashed var(--gold);border-radius:8px;padding:12px;font-size:14px;color:var(--gold)}
+#sec details{border-bottom:1px solid var(--line);padding:12px 0}
+#sec summary{font:700 16px "Nanum Myeongjo",serif;color:var(--ink);cursor:pointer}
+#sec details p,#sec details li{color:var(--ink);font-size:14px;margin:8px 0}
+#sec ul{padding-left:18px;margin:8px 0}
+#sec .tw{overflow-x:auto}
+#sec .tb th{white-space:nowrap;color:var(--gold)}
+#sec .tb td:first-child{white-space:nowrap;font-weight:500;color:var(--red2)}
+#sec .key{border-left:3px solid var(--gold);padding:6px 12px;color:var(--gold);font-size:13px;margin:10px 0}
+#sec .meta{display:grid;grid-template-columns:70px 1fr;gap:4px 10px;font-size:14px;margin:10px 0}#sec .meta dt{color:var(--mute)}#sec .meta dd{margin:0}
+#sec .doc p{color:#2a1a1a}
+.m1{color:var(--bad);font-size:13px;margin-top:12px;text-align:left}
+.m2,.m3{margin-top:12px;text-align:left;font-size:13px;padding:12px}
+.m2{border:1px solid var(--red);background:#3a0a1688}
+.m3{border:1px solid var(--red2);background:#000;color:#cfa0a8;box-shadow:0 0 24px #c8142f55;line-height:1.8}
+.m2 b,.m3 b{display:block;font:700 13px monospace;letter-spacing:.08em;color:var(--red2);margin-bottom:6px}
+@media (prefers-reduced-motion:no-preference){.m2{animation:sh .4s}}
+@keyframes sh{20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+#lock{max-width:340px;margin:20vh auto 0;text-align:center}
+.ev{border:1px solid var(--gold);background:linear-gradient(160deg,#2c1b0a,#140a0e 70%);border-radius:14px;padding:18px}.ev h2{color:var(--gold)}.ev .bg2{display:inline-block;background:var(--gold);color:#140a0e;font-size:11px;font-weight:800;border-radius:4px;padding:1px 8px;margin-bottom:8px}.ev p{margin:0 0 12px;font-size:14px;color:var(--ink)}.ev .bn b{color:var(--gold)}.chips span{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:1px 10px;font-size:12px;margin:0 4px 6px 0}.ev small{display:block;color:var(--mute);font-size:12px;margin-top:10px;line-height:1.6}</style></head>
+<body id="top"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="drop" viewBox="0 0 24 24"><path d="M12 2.5C9 7 6 10.5 6 14.5a6 6 0 0012 0C18 10.5 15 7 12 2.5z"/></symbol><symbol id="cal" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></symbol><symbol id="list" viewBox="0 0 24 24"><path d="M5 4h14v17H5zM9 9h6M9 13h6M9 17h3"/></symbol><symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-10a6 6 0 0112 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></symbol><symbol id="gift" viewBox="0 0 24 24"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-3 0-4-4-1-4 2 0 1 4 1 4zm0 0c3 0 4-4 1-4-2 0-1 4-1 4z"/></symbol><symbol id="bell" viewBox="0 0 24 24"><path d="M6 17v-6a6 6 0 0112 0v6l2 2H4zM10 21h4"/></symbol><symbol id="card" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 10h18M7 15h4"/></symbol><symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol><symbol id="home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4zM10 20v-6h4v6"/></symbol></defs></svg>
+<header><div class="lg"><svg class="ic"><use href="#drop"/></svg></div><div><b>크림슨 커넥트</b><small>몽고베리 혈액원</small></div><a href="#notice" aria-label="공지"><svg class="ic"><use href="#bell"/></svg></a></header>
+<section style="padding-top:18px">
+<div class="hero"><svg class="bg" viewBox="0 0 24 24"><path d="M12 2.5C9 7 6 10.5 6 14.5a6 6 0 0012 0C18 10.5 15 7 12 2.5z"/></svg>
+<span class="seal">마법부 인가 신규 혈액관리기관 제 2291호</span>
+<h1>순혈의 피가<br>생명을 잇습니다</h1>
+<p>몽고베리 혈액원은 검증된 순혈 가문의 헌혈만 받아 안전하게 보관하고 공급합니다.</p>
+<a class="cta" href="#book">헌혈 예약하기</a>
+<div class="stat"><div><b>8개월</b>개원 후</div><div><b>1,284</b>누적 헌혈</div><div><b>10</b>참여 가문</div></div></div>
+<div class="menu"><a href="#book"><svg class="ic"><use href="#cal"/></svg>헌혈예약</a><a href="#stock"><svg class="ic"><use href="#drop"/></svg>보유현황</a><a href="#check"><svg class="ic"><use href="#list"/></svg>자가진단</a><a href="#branch"><svg class="ic"><use href="#pin"/></svg>헌혈의 집</a><a href="#benefit"><svg class="ic"><use href="#gift"/></svg>후원 혜택</a><a href="#notice"><svg class="ic"><use href="#bell"/></svg>공지사항</a><a href="#benefit"><svg class="ic"><use href="#card"/></svg>헌혈 증서</a><a href="#family"><svg class="ic"><use href="#shield"/></svg>가문 소개</a></div>
+<div class="warn"><b>접수 안내</b> 순혈 계보 등재번호가 없는 분, 머글, 머글 태생, 일반 혼혈은 헌혈은 물론 출입도 불가합니다. 단, 이종족과 이종족 혼혈은 특별 이벤트 기간에 한해 가능합니다.</div>
+</section>
+<section id="event"><div class="ev"><span class="bg2">특별 이벤트 · 선착순 200명</span><h2>이종족 · 이종족 혼혈 헌혈 주간</h2>
+<p>이종족 사회와의 우호 협력과 희귀 혈액 확보를 위해 기간 한정으로 <b>이종족 본인과 이종족 혼혈</b> 모두의 헌혈을 받습니다. 순혈 계보 등재번호는 필요하지 않으며, 혈통은 현장 혈액 검사로 확인합니다.</p><div class="chips"><span>고블린</span><span>켄타우로스</span><span>인어족</span><span>집요정</span><span>거인</span><span>뱀파이어</span><span>빌라</span><span>늑대인간</span></div>
+<div class="bn"><div><b>금화 300 갈레온</b><span>헌혈 즉시 현장 지급</span></div><div><b>평생 무료 정밀 검진</b><span>연 4회, 전 과목</span></div><div><b>평생 우선 진료권</b><span>성 뭉고 병원 협력 진료</span></div><div><b>신변 보호 등록증</b><span>실명 비공개 접수, 코드로 관리</span></div><div><b>한정판 은제 메달</b><span>헌혈 기념 각인</span></div><div><b>영양 포션 12개월</b><span>매달 올빼미 우편 배송</span></div></div>
+<a class="cta" href="#book" style="background:var(--gold);color:#140a0e;margin-top:0">이벤트 헌혈 예약하기</a>
+<small>이벤트 헌혈은 노크턴 앨리 야간점에서만 진행합니다. 머글, 머글 태생, 마법사와 머글 사이의 혼혈은 대상이 아닙니다.</small></div></section>
+<section id="stock"><h2>혈액 보유 현황</h2><p class="sub" id="upd"></p>
+<div class="card"><div class="shelf" id="shelf"></div>
+<div class="legend"><span><i class="dot" style="background:var(--ok)"></i>안정</span><span><i class="dot" style="background:var(--warn)"></i>관심</span><span><i class="dot" style="background:var(--bad)"></i>주의</span></div></div></section>
+<section id="benefit"><h2>후원 가문 혜택</h2><p class="sub">개원 기념 창립 가문 명패는 선착순 100개 가문, 현재 <b id="left" style="color:var(--gold)"></b>개 남음.</p>
+<div class="bn"><div><b>사회적 명예</b><span>의료 발전에 기여하는 명문가로 공식 인정, 마법부 연보에 후원 가문으로 등재</span></div><div><b>의료 우선 지원</b><span>중상과 긴급 치료 시 혈액과 의료 자원 우선 배정, 올빼미 긴급 호출 24시간</span></div><div><b>가문 혈액 비축</b><span>가문 몫의 혈액을 별도 냉장 보관, 필요 시 즉시 출고</span></div><div><b>정기 건강 검진</b><span>연 2회 가문 전용 검진 무료, 영양 포션 쿠폰 제공</span></div><div><b>가문 명패 게시</b><span>본점 로비에 가문 명패 게시, 헌혈 횟수에 따라 등급 상승</span></div><div><b>가문 교류 만찬</b><span>연 2회 후원 가문 교류 모임, 의료·연구 협력 연결</span></div><div><b>후원 실적 증서</b><span>가문 기록과 족보에 후원 실적을 기재, 후대에 계승</span></div><div><b>자녀 건강 연계</b><span>입학 전 건강검진과 학교 의무실 협력, 가문 구성원 보호 체계</span></div></div>
+<div class="card"><label for="cnt" style="margin-top:0">나의 헌혈 횟수: <b id="cn">1</b>회</label><input type="range" id="cnt" min="0" max="12" value="1"><div id="tier"></div></div></section>
+<section id="check"><h2>헌혈 가능 여부 자가진단</h2><p class="sub">해당하는 항목을 모두 체크하세요.</p>
+<div class="card" id="chks"></div><button id="chkBtn">결과 확인하기</button><div id="res" aria-live="polite"></div></section>
+<section id="book"><h2>헌혈 예약</h2><p class="sub">순혈 계보 확인이 끝난 분만 예약할 수 있습니다.</p>
+<div class="card"><label for="nm" style="margin-top:0">접수 이름</label><input id="nm" placeholder="접수대에서 부를 이름" autocomplete="off">
+<label for="bl">혈통</label><select id="bl"><option>순혈</option><option>혼혈 (마법사·머글)</option><option>이종족 · 이종족 혼혈 (특별 이벤트)</option><option>머글 태생 마법사</option><option>머글</option></select>
+<div id="spw" style="display:none"><label for="sp">종족 (혼혈이면 해당 종족)</label><select id="sp"><option>고블린</option><option>켄타우로스</option><option>인어족</option><option>집요정</option><option>거인</option><option>뱀파이어</option><option>빌라</option><option>늑대인간</option></select><label for="hy">구분</label><select id="hy"><option>이종족</option><option>이종족 혼혈</option></select><div style="font-size:12px;color:var(--gold);margin-top:6px">이벤트 헌혈은 노크턴 앨리 야간점에서만 가능하며, 등재번호 대신 현장 혈액 검사로 확인합니다.</div></div><div id="rgw"><label for="rg">순혈 계보 등재번호</label><div style="font-size:12px;color:var(--mute);margin:-2px 0 6px">형식: PB-가문코드 3자-입적연도 2자리-일련번호 4자리</div><input id="rg" placeholder="예: PB-MNT-98-0412" autocomplete="off"></div>
+<label for="br">헌혈의 집</label><select id="br"><option>다이애건 앨리 본점</option><option>노크턴 앨리 야간점 (시범 운영)</option></select>
+<label for="ty">헌혈 종류</label><select id="ty"><option>전혈</option><option>혈장</option><option>혈소판</option><option>순혈 성분헌혈</option></select>
+<label for="dt">날짜</label><input id="dt" type="text" value="XXXX. XX. XX." readonly><button id="bkBtn">예약하기</button></div><div id="ticket" aria-live="polite"></div></section>
+<section id="notice"><h2>공지사항</h2><p class="sub">&nbsp;</p><div class="card"><div class="row"><div><b>이종족 · 이종족 혼혈 특별 헌혈 이벤트 시작</b><span>노크턴 앨리 야간점 한정, 선착순 200명, 금화와 평생 검진 증정</span></div><em class="tag" style="background:var(--gold)">이벤트</em></div>
+<div class="row"><div><b>머글 태생 접수 금지 및 폐기 안내</b><span>개원 첫날부터 시행 중인 방침입니다. 예외는 없습니다</span></div><em class="tag" style="background:var(--red)">중요</em></div>
+<div class="row"><div><b>개원 기념 창립 가문 명패 증정</b><span>선착순 100개 가문, 본점 로비에 금빛 명패 게시</span></div><em class="tag" style="background:var(--gold)">이벤트</em></div>
+<div class="row"><div><b>O형 혈액 보유량 주의</b><span>개원 초기라 확보량이 부족합니다</span></div><em class="tag" style="background:var(--bad)">긴급</em></div>
+<div class="row"><div><b>호그스미드 2호점 공사 중</b><span>저장고 공사로 개원이 늦어지고 있습니다</span></div><em class="tag" style="background:var(--mute)">안내</em></div></div></section>
+<section id="branch"><h2>헌혈의 집 안내</h2><p class="sub">&nbsp;</p><div class="card">
+<div class="row"><div><b>다이애건 앨리 본점</b><span>10:00–19:00 · 계보 확인 창구 운영 · 대기 시간이 길어질 수 있음</span></div></div>
+<div class="row"><div><b>노크턴 앨리 야간점 (시범 운영)</b><span>일몰 후 · 예약자 외 출입 불가</span></div></div>
+<div class="row"><div><b>호그스미드 지점</b><span>공사 중 · 개원 예정</span></div></div></div></section>
+<section id="family"><h2>원장 및 의료진</h2><p class="sub">몽고베리 가문 · 구성원의 신상은 공개하지 않습니다.</p><div class="fam">
+<div class="card"><div class="av">원</div><div><h3>원장 <span class="bar"></span></h3><p>혈액원 신설과 계보 검증을 총괄합니다.</p><div class="cr">마법 혈액학 박사<br>마법부 혈액관리사 1급 (면허 MB-0417호)<br>성 뭉고 마법 병원 혈액학과 14년 수련<br>마법부 혈액관리위원회 자문위원</div></div></div>
+<div class="card"><div class="av">부</div><div><h3>부원장 <span class="bar"></span></h3><p>혈액 검사와 성분 분석을 담당합니다.</p><div class="cr">마법 약학 석사 · 마법부 약제관리사 (면허 MY-1182호)</div></div></div>
+<div class="card"><div class="av">후</div><div><h3>후계자 <span class="bar" id="hb"></span></h3><p>방학마다 접수대에 있을 수 있으나, 말을 걸지 마십시오.</p><div id="hint">일몰 후에야 직원 문이 열린다. 하단의 직원 전용을 찾아라.</div></div></div></div></section>
+<section id="faq"><h2>자주 묻는 질문</h2>
+<details><summary>왜 순혈만 헌혈할 수 있나요?</summary><p>맑은 피만 다루는 것이 이 혈액원을 세운 이유입니다. 그 외의 피는 받지 않습니다.</p></details>
+<details><summary>머글 태생 마법사도 기여하고 싶습니다.</summary><p>마음만 받겠습니다. 접수되면 즉시 폐기하며, 반복하면 출입을 금지합니다.</p></details>
+<details><summary>혼혈은 어떻게 되나요?</summary><p>마법사와 머글 사이의 혼혈은 접수 불가입니다. 이종족과 이종족 혼혈은 특별 이벤트 기간에 한해 노크턴 앨리 야간점에서 접수합니다.</p></details>
+<details><summary>지하 저장고를 볼 수 있나요?</summary><p>불가능합니다. 가문 직원 외 출입을 금합니다.</p></details></section>
+<footer><b style="color:var(--ink)">몽고베리 혈액원 (크림슨 커넥트)</b><br>대표 ████ · 인가번호 제 2291호<br>소재지 다이애건 앨리 본점 · 문의 올빼미 우편 접수<br>운영시간 10:00–19:00 (야간점 일몰 후)<br><a href="#" id="staff">직원 전용</a></footer>
+<nav class="tabs"><a href="#top"><svg class="ic"><use href="#home"/></svg>홈</a><a href="#book"><svg class="ic"><use href="#cal"/></svg>예약</a><a href="#benefit"><svg class="ic"><use href="#gift"/></svg>혜택</a><a href="#branch"><svg class="ic"><use href="#pin"/></svg>헌혈의 집</a><a href="#family"><svg class="ic"><use href="#shield"/></svg>가문</a></nav>
+<div id="sec" role="dialog" aria-modal="true">
+<div id="lock"><h2>직원 전용</h2><p class="sub">인증 정보를 입력하십시오.</p><input id="pw" type="password" placeholder="암호" autocomplete="off"><button id="pwBtn">열기</button><div id="pwe"></div><button id="x1" style="background:none;border:1px solid var(--line);color:var(--mute)">닫기</button></div>
+<div class="in" id="vault" style="display:none">
+<h2>ETERNITAS</h2><p class="sub">기밀 운영 문서 · 열람 금지</p>
+<dl class="meta"><dt>문서 번호</dt><dd>ETN-001</dd><dt>보안 등급</dt><dd>최상위 기밀</dd><dt>관리 기관</dt><dd>순혈 가문 연합 혈액원</dd><dt>총괄 책임자</dt><dd>미상</dd><dt>열람 권한</dt><dd>총괄 책임자 및 승인된 관계자에 한함</dd></dl>
+<details open><summary>I. 프로젝트 기본 사항</summary>
+<dl class="meta"><dt>프로젝트명</dt><dd>ETERNITAS</dd><dt>운영 목적</dt><dd>혈액의 마법적 특성 및 장수 현상에 관한 연구</dd><dt>최종 목표</dt><dd>인간의 수명 한계 제거 및 영생 실현</dd><dt>운영 방식</dt><dd>순혈 가문 연합 혈액원을 통한 자금·혈액·연구 자료의 통합 관리</dd></dl>
+<p>본 프로젝트는 뱀파이어의 장수 원리를 연구하고, 해당 특성을 인간에게 적용하기 위한 장기 연구 사업이다.</p>
+<p>프로젝트의 전반적인 계획 수립과 주요 연구 방향은 총괄 책임자가 관리한다. 참여 가문은 재정 및 연구 자원을 제공하며, 각 가문의 기여도에 따라 정보 접근 권한과 향후 연구 성과에 대한 우선권을 부여받는다.</p>
+<p>프로젝트의 최종 목표 및 핵심 연구 기록은 일반 운영 문서와 분리하여 보관한다.</p></details>
+<details><summary>II. 연구 진행 방침</summary>
+<ul><li>뱀파이어의 장수 원리와 혈액의 마법적 특성에 관한 자료를 지속적으로 확보할 것.</li><li>확보한 혈액의 특성 및 생명 유지와의 연관성을 분류·기록할 것.</li><li>인간에게 적용 가능한 생명 연장 원리를 규명할 것.</li><li>연구 결과의 외부 유출을 방지하고 핵심 자료에 대한 접근 권한을 제한할 것.</li><li>영생 기술의 실현 가능성을 검토하고 적용 대상 선정 기준을 사전에 마련할 것.</li><li>모든 주요 연구 결과와 후속 계획은 총괄 책임자의 승인을 거칠 것.</li></ul>
+<div class="key">주의: 연구 단계 및 세부 진행 상황은 승인된 인원에게만 공개한다. 외부 보고서에는 최종 연구 목표를 명시하지 않는다.</div></details>
+<details><summary>III. 운영 기관</summary>
+<dl class="meta"><dt>기관명</dt><dd>순혈 가문 연합 혈액원</dd><dt>대외 업무</dt><dd>혈액 보존, 의료 지원, 혈액 관련 기초 연구</dd><dt>내부 업무</dt><dd>연구 자원 확보, 혈액 자료 관리, 생명 연장 연구 지원</dd></dl>
+<p>혈액원은 프로젝트 운영에 필요한 자원과 재정을 확보하는 동시에, 대외적으로 독립적인 의료 지원 기관의 형태를 유지한다.</p>
+<p>일반적인 혈액 관리 기록과 ETERNITAS 관련 자료는 별도로 관리한다. 연구 목적을 초과하는 자료 열람 및 승인되지 않은 정보 공유는 허용하지 않는다.</p></details>
+<details><summary>IV. 조직 및 권한</summary>
+<p><b>1. 총괄 책임자</b></p><ul><li>프로젝트 전체 운영 및 연구 방향 결정</li><li>핵심 연구 인력 선임 및 업무 승인</li><li>주요 자료에 대한 접근 권한 부여</li><li>연구 성과의 관리 및 배분 결정</li><li>참여 가문과의 계약 및 기여 조건 조정</li></ul>
+<p><b>2. 운영위원회</b></p><ul><li>참여 가문별 자금 및 자원 공급 관리</li><li>혈액원 운영 예산 심의</li><li>대외 사업 및 공식 활동 승인</li><li>총괄 책임자가 승인한 범위 내에서 운영 사항 처리</li></ul>
+<p><b>3. 혈액 관리부</b></p><ul><li>혈액 접수 및 보존</li><li>혈액별 특성 기록과 자료 분류</li><li>의료 지원용 혈액 공급</li><li>연구용 자료의 별도 관리</li></ul>
+<p><b>4. 생명 연장 연구부</b></p><ul><li>뱀파이어의 장수 현상 연구</li><li>혈액과 마법적 생명력의 관계 분석</li><li>인간 적용 가능성 검토</li><li>연구 결과 및 후속 계획 보고</li></ul>
+<p><b>5. 기밀 관리부</b></p><ul><li>문서별 보안 등급 지정</li><li>자료 열람 권한 및 기록 관리</li><li>핵심 연구 자료의 별도 보관</li><li>승인되지 않은 정보 접근 및 유출 여부 확인</li></ul></details>
+<details><summary>V. 참여 가문 관리</summary>
+<p>참여 가문은 제공 자원 및 기여도에 따라 다음과 같이 구분한다.</p>
+<div class="tw"><table class="tb"><tr><th>등급</th><th>권한 및 혜택</th></tr><tr><td>창립 가문</td><td>운영위원회 내 우선적 영향력, 제한된 핵심 연구 자료 열람, 향후 성과에 대한 우선권</td></tr><tr><td>핵심 후원 가문</td><td>정기 연구 보고, 일부 연구 성과 열람, 조건부 우선 이용권</td></tr><tr><td>일반 회원 가문</td><td>기본 의료 지원, 공식 회원 혜택, 제한된 연구 정보 접근</td></tr></table></div>
+<p>가문별 등급은 기여도와 운영상 필요에 따라 재검토할 수 있다.</p>
+<p>영생 기술의 적용 대상 및 이용 조건은 별도 심의를 통해 결정한다. 회원 자격만으로 해당 기술에 대한 권리가 보장되지는 않는다.</p></details>
+<details><summary>VI. 연구 성과 및 적용 권한</summary>
+<ul><li><b>1급 자료</b> 일반 혈액 연구 및 기초 분석 자료</li><li><b>2급 자료</b> 뱀파이어의 장수 원리 및 생명 연장 관련 자료</li><li><b>3급 자료</b> 인간 적용 연구 결과 및 핵심 실험 기록</li><li><b>특별 관리 자료</b> 영생 실현 계획, 최종 적용 기준, 총괄 책임자 승인 사항</li></ul>
+<p>특별 관리 자료는 별도 보관하며, 열람 및 사본 작성은 사전 승인 없이는 허용하지 않는다.</p>
+<p>영생 기술이 실현될 경우 적용 대상은 별도 기준에 따라 선정한다. 연구 성과의 외부 공개 및 제3자 제공 여부 역시 총괄 책임자의 결정에 따른다.</p>
+<div class="key">현재 연구 단계에서 영생 실현 여부와 완성 시점은 확정되지 않았다.</div></details>
+<details><summary>VII. 대외 문서 관리</summary>
+<p>외부 공개 문서에는 다음 사항만 기재한다.</p>
+<ul><li>혈액 보존 및 관리 기술의 발전</li><li>마법사 사회의 의료 지원</li><li>혈액 관련 기초 연구</li><li>생명 연장에 관한 일반적인 연구 목적</li></ul>
+<p>뱀파이어의 장수 특성을 인간에게 적용하려는 구체적인 계획, 영생 기술의 적용 대상 및 내부 성과 배분 기준은 외부 문서에 기재하지 않는다.</p>
+<p>외부 문의는 지정된 담당 부서를 통해 처리한다. 승인되지 않은 연구 자료 및 운영 기록의 제공은 금지한다.</p></details>
+<details><summary>VIII. 최종 관리 지침</summary>
+<ul><li>본 문서의 열람은 승인된 관계자로 제한한다.</li><li>프로젝트 관련 자료는 일반 혈액원 기록과 분리하여 관리한다.</li><li>연구 성과 및 적용 계획의 변경은 총괄 책임자의 승인을 필요로 한다.</li><li>참여 가문에 제공되는 정보는 해당 가문의 권한 범위에 따라 구분한다.</li><li>본 문서의 무단 복제, 외부 반출 및 비인가 인원에 대한 공개를 금한다.</li></ul>
+<dl class="meta"><dt>문서 상태</dt><dd>유효</dd><dt>최종 승인</dt><dd>총괄 책임자</dd><dt>서명</dt><dd>비공개</dd><dt>작성·승인</dt><dd>별도 기록</dd></dl></details>
+<details><summary>부록 A. 후원 가문 및 후원 기업 등급 현황</summary>
+<p>등급 기준(연간 후원 약정액, 갈레온): 창립 100만 이상 · 핵심 50만 이상 · 일반 5만 이상. 기업은 현물 후원(약재, 장비, 운송 등)을 금액으로 환산해 같은 기준으로 분류한다.</p>
+<div class="tw"><table class="tb"><tr><th>후원처</th><th>코드</th><th>등급</th><th>후원 내용</th></tr>
+<tr><td>몽고베리 가문</td><td>MNT</td><td>I 창립</td><td>185만 · 부지와 저장고 제공</td></tr>
+<tr><td>아스터로스 가문</td><td>AST</td><td>I 창립</td><td>162만 · 운영 자금</td></tr>
+<tr><td>드레이븐 가문</td><td>DRV</td><td>I 창립</td><td>140만 · 연구 인력 추천</td></tr>
+<tr><td>문스톤 마법 보험 조합</td><td>기업</td><td>I 창립 기업</td><td>120만 · 가문 의료 보험 연계</td></tr>
+<tr><td>발모어 가문</td><td>BLM</td><td>II 핵심</td><td>72만</td></tr>
+<tr><td>크로우필드 가문</td><td>CRF</td><td>II 핵심</td><td>61만</td></tr>
+<tr><td>하프스테드 가문</td><td>HFS</td><td>II 핵심</td><td>54.5만</td></tr>
+<tr><td>에버나잇 약재 무역</td><td>기업</td><td>II 핵심 기업</td><td>68만 상당 · 시약과 약재 공급</td></tr>
+<tr><td>하이퍼리온 냉각 공방</td><td>기업</td><td>II 핵심 기업</td><td>55만 상당 · 저장고 냉각 장치</td></tr>
+<tr><td>라벤웨스트 가문</td><td>RVW</td><td>III 일반</td><td>18만</td></tr>
+<tr><td>오르시니 가문</td><td>ORS</td><td>III 일반</td><td>15만</td></tr>
+<tr><td>펜로즈 가문</td><td>PNR</td><td>III 일반</td><td>9.5만</td></tr>
+<tr><td>쇼트클리프 가문</td><td>SCL</td><td>III 일반</td><td>6만</td></tr>
+<tr><td>그린리프 포션 상회</td><td>기업</td><td>III 일반 기업</td><td>12만 상당 · 포션 원료</td></tr>
+<tr><td>실버헤이븐 신탁</td><td>기업</td><td>III 일반 기업</td><td>8만 · 후원금 신탁 운용</td></tr>
+<tr><td>오로라 올빼미 운송</td><td>기업</td><td>III 일반 기업</td><td>5만 상당 · 긴급 운송</td></tr></table></div></details>
+<details><summary>부록 B. 순혈 계보 등재번호 체계</summary>
+<p>등재번호는 계보 확인을 마친 가문 구성원에게 기밀 관리부가 발급한다. 형식은 다음과 같다.</p>
+<div class="key">PB-[가문 코드 3자]-[입적 연도 끝 2자리]-[일련번호 4자리]<br>예시: PB-MNT-98-0412</div>
+<ul><li><b>PB</b> 순혈 계보 등재를 뜻하는 고정 접두어</li><li><b>가문 코드</b> 가문 영문명의 앞 세 글자를 대문자로 쓴다. 부록 A의 코드 참조.</li><li><b>입적 연도</b> 계보에 이름이 오른 해의 끝 두 자리</li><li><b>일련번호</b> 해당 가문 안에서 입적된 순서. 가문마다 0001부터 시작한다.</li></ul>
+<p>발급 절차: 3대 이상의 혈통 증명 서류 제출 → 가문 대표의 보증 서명 → 계보 대조 → 기밀 관리부 등재. 위조나 대여가 확인되면 번호를 말소하고 가문 전체의 등급을 재심사한다.</p></details>
+<details><summary>부록 C. 이종족 · 이종족 혼혈 특별 헌혈 이벤트의 실제 목적</summary>
+<dl class="meta"><dt>문서 번호</dt><dd>ETN-001-C</dd><dt>승인</dt><dd>총괄 책임자</dd><dt>열람</dt><dd>특별 관리 자료</dd></dl>
+<p><b>1. 공식 명목</b></p><p>이종족 사회와의 우호 협력, 희귀 혈액 확보. 대외 공지에는 뱀파이어를 여러 종족 사이에 섞어 적어 특정 종족을 노리는 인상을 지운다.</p>
+<p><b>2. 실제 목적</b></p><p>ETERNITAS의 핵심 자료는 뱀파이어의 장수 원리를 담은 혈액이다. 순혈 마법사의 혈액에서는 이를 얻을 수 없고, 순수한 뱀파이어는 접촉 자체가 어렵다. 따라서 이벤트의 진짜 대상은 <b>뱀파이어와 반 뱀파이어 혼혈</b>이며, 이들의 혈액이 2급, 3급 자료의 직접 근거가 된다.</p>
+<p><b>3. 순혈 방침을 깨는 이유</b></p><p>순혈 외에는 접수하지 않는다는 방침은 대외 신뢰의 근간이다. 이벤트는 이 방침의 한시적 예외로 위장해, 이종족 전체와 그 혼혈을 부르는 모양을 만든다. 고블린, 켄타우로스, 인어족, 집요정, 거인, 빌라, 늑대인간은 위장과 대조군이며, 뱀파이어가 핵심 대상이라는 사실을 가린다.</p>
+<p><b>4. 선물의 실제 기능</b></p>
+<div class="tw"><table class="tb"><tr><th>선물</th><th>실제 기능</th></tr>
+<tr><td>금화 300 갈레온</td><td>첫 방문에 대한 경계를 풀고 신뢰를 얻는다</td></tr>
+<tr><td>평생 정밀 검진 (연 4회)</td><td>정기 채혈의 명분. 재방문을 확정한다</td></tr>
+<tr><td>평생 우선 진료권</td><td>치료 기록을 통해 장수 지표의 변화를 추적한다</td></tr>
+<tr><td>신변 보호 등록증</td><td>이종족 명부의 실체. 소재와 가족 관계를 파악한다</td></tr>
+<tr><td>실명 비공개 접수</td><td>코드 번호로 관리해 외부 기록과 연결을 끊는다</td></tr>
+<tr><td>은제 메달, 영양 포션</td><td>월 1회 배송 접점. 주소와 생활 반응을 확인한다</td></tr></table></div>
+<p><b>5. 처리 절차</b></p>
+<ul><li>접수는 노크턴 앨리 야간점에서만 진행한다. 일반 접수와 동선을 분리한다.</li><li>현장 혈액 검사에서 마법 반응과 장수 지표로 종족을 판별한다.</li><li>뱀파이어 또는 반 뱀파이어로 판정되면 특별 관리 코드 EV-S를 부여하고 별도 선반으로 분류한다.</li><li>EV-S 대상에게는 &ldquo;정밀 검진&rdquo; 초대장을 발송하고, 승인 후 생명 연장 연구부로 연결한다.</li></ul>
+<p><b>6. 위험 요소</b></p>
+<ul><li>참가자가 재방문하지 않거나 사라지면 이종족 사회에 소문이 번질 수 있다.</li><li>뱀파이어 가문과 이종족 단체가 이벤트의 실체를 의심할 수 있다.</li><li>순혈주의를 지지하는 일부 가문이 이벤트 자체에 반발할 수 있다. 창립 가문 내부에서 운영위원회를 통해 조정한다.</li><li>접수대에서 일하는 가문 구성원이 참가자와 개인적으로 접촉하지 않도록 관리한다.</li><li>이벤트 명부의 열람 권한은 총괄 책임자에게만 부여한다.</li></ul></details>
+<details><summary>부록 D. 후원 약정서 (작성하면 바로 반영)</summary>
+<label for="ak" style="display:block;font-size:13px;margin:8px 0 4px">후원처 구분</label><select id="ak"><option>가문</option><option>기업</option></select>
+<label for="af" style="display:block;font-size:13px;margin:8px 0 4px">후원처 이름</label><input id="af" value="몽고베리">
+<label for="ar" style="display:block;font-size:13px;margin:8px 0 4px">대표자</label><input id="ar" placeholder="대표자 성명">
+<label for="am" style="display:block;font-size:13px;margin:8px 0 4px">연간 약정액 (갈레온, 현물은 환산액)</label><input id="am" type="number" min="0" value="500000">
+<div class="doc" id="doc"></div></details>
+<div class="key">[문서 열람 종료]</div>
+<button id="x2" style="background:none;border:1px solid var(--line);color:var(--mute)">닫기</button>
+</div>
+</div>
+
+<script>
+(function(){
+function $(i){return document.getElementById(i)}function v(i){return $(i).value}function esc(s){return s.replace(/[<>&]/g,"")}
+var S=[["A+",52],["A-",21],["B+",44],["B-",12],["O+",30],["O-",7],["AB+",61],["AB-",24]];
+function lv(p){return p>=50?["안정","var(--ok)"]:p>=20?["관심","var(--warn)"]:["주의","var(--bad)"]}
+S.forEach(function(s){var l=lv(s[1]),d=document.createElement("div");d.className="vial";d.innerHTML='<div class="tube"><i style="height:0;background:'+l[1]+'" data-h="'+s[1]+'"></i></div><strong>'+s[0]+'</strong><small style="color:'+l[1]+'">'+l[0]+'</small>';$("shelf").appendChild(d)});
+setTimeout(function(){document.querySelectorAll(".tube i").forEach(function(i){i.style.height=i.dataset.h+"%"})},250);
+var n=new Date();$("upd").textContent="최근 갱신 XXXX. XX. XX. 기준";
+$("left").textContent=100-((n.getDate()*3)%37+41);
+var T=[[1,"가","순혈 헌혈 증서","첫 헌혈 후 발급, 가문 계보에 기록"],[1,"一","가문 명패","본점 로비에 가문 명패 게시"],[3,"三","정기 검진 무료","가문 전용 검진과 영양 포션 쿠폰"],[6,"六","교류 모임 우선 초청","후원 가문 교류 만찬 우선 초청"],[10,"十","명예 가문 인증","금빛 명패와 지하 라운지 이용권"]];
+function rt(){var c=+v("cnt");$("cn").textContent=c;$("tier").innerHTML=T.map(function(t){return'<div class="tier'+(c>=t[0]?' on':'')+'"><i>'+t[1]+'</i><div><b>'+t[2]+' ('+t[0]+'회)</b><span>'+t[3]+'</span></div></div>'}).join("")}
+$("cnt").oninput=rt;rt();
+var Q=[["순혈 계보에 등재되어 있지 않다",-1,"혈통"],["부모나 조부모 중 머글 또는 머글 태생이 있다",-1,"혈통"],["몸무게가 50kg 미만이거나 만 16세 미만이다",0,"몸 상태"],["현재 열이 있거나 몸살 기운이 있다",7,"몸 상태"],["어제 잠을 6시간 이상 자지 못했다",1,"몸 상태"],["최근 3개월 이내 수술이나 마법 시술을 받았다",90,"몸 상태"],["임신 중이거나 수유 중이다",180,"몸 상태"],["최근 56일 이내 전혈 헌혈을 했다",56,"몸 상태"],["최근 14일 이내 폴리주스를 복용했다",14,"마법·약물"],["최근 7일 이내 치유 마법이나 마법약 치료를 받았다",7,"마법·약물"],["최근 72시간 이내 진실의 약, 사랑의 묘약 등 정신에 영향을 주는 약을 복용했다",3,"마법·약물"],["최근 6개월 이내 마법 각인이나 문신 시술을 받았다",180,"마법·약물"],["최근 6개월 이내 저주를 맞은 적이 있다",180,"마법·약물"],["최근 1년 이내 흑마법 관련 약물에 노출되었다",365,"마법·약물"],["최근 30일 이내 늑대인간과 접촉했다",30,"최근 활동"],["최근 30일 이내 마법 생물에게 물렸다",30,"최근 활동"],["최근 72시간 이내 시간 여행 장치를 사용했다",3,"최근 활동"],["최근 7일 이내 변신술을 사용했다",7,"최근 활동"],["최근 24시간 이내 파이어위스키를 마셨다",1,"최근 활동"]];
+var el=document.createElement("label");el.className="chk";el.innerHTML='<input type="checkbox" id="ev"><span>이종족이거나 이종족과의 혼혈이다 (이벤트 대상)</span>';$("chks").appendChild(el);var gp="";Q.forEach(function(q,i){var l=document.createElement("label");if(q[2]!==gp){gp=q[2];var h=document.createElement("div");h.textContent=gp;h.style.cssText="font-size:12px;font-weight:700;color:var(--gold);margin:"+(i?"16px":"0")+" 0 0";$("chks").appendChild(h)}l.className="chk";l.innerHTML='<input type="checkbox" id="q'+i+'"><span>'+q[0]+'</span>';$("chks").appendChild(l)});
+$("chkBtn").onclick=function(){var hit=Q.filter(function(q,i){return $("q"+i).checked&&!(i===0&&$("ev").checked)}),r=$("res");
+if(hit.some(function(q){return q[1]<0})){r.innerHTML='<div class="deny"><h3>자격 없음</h3><p>불순한 피는 이곳에서 한 방울도 받지 않습니다.</p><p>진단 기록은 접수대에 전달됩니다. 접근하지 마십시오.</p></div>';return}
+if(hit.length){var mx=Math.max.apply(null,hit.map(function(q){return q[1]})),t=new Date(Date.now()+mx*864e5),when=mx>0?"가장 긴 유예 "+mx+"일 · 다음 가능일 "+"XXXX. XX. XX.":"해당 기준을 충족한 뒤 다시 진단해 주세요";
+r.innerHTML='<div class="res" style="color:var(--warn);border-color:var(--warn)"><b>헌혈 유예 ('+hit.length+'개 항목)</b><br>'+hit.map(function(q){return"· "+q[0]}).join("<br>")+'<br><br>'+when+'</div>'}
+else if($("ev").checked){r.innerHTML='<div class="res" style="color:var(--gold);border-color:var(--gold)">이벤트 대상입니다. 예약 화면에서 이종족 · 이종족 혼혈(특별 이벤트)을 선택해 주세요.</div>'}
+else{r.innerHTML='<div class="res" style="color:var(--ok);border-color:var(--ok)">헌혈 가능합니다. 계보 등재번호를 준비해 예약해 주세요.</div>'}};
+
+var M={"혼혈 (마법사·머글)":"반쪽짜리 피로는 이곳의 병 하나도 채울 수 없습니다. 순혈이 아닌 것은 순혈이 아닙니다.","머글 태생 마법사":"빌려 온 마법이 흐르는 피는 우리 저장고에 들어올 수 없습니다. 누가 당신을 들여보냈습니까.","머글":"이곳은 당신이 있을 곳이 아닙니다. 지금 당장 나가십시오."};
+$("bkBtn").onclick=function(){var nm=v("nm").trim(),rg=v("rg").trim(),tk=$("ticket"),b=v("bl");
+if(b==="이종족 · 이종족 혼혈 (특별 이벤트)"){if(!nm){tk.innerHTML='<div class="res" style="color:var(--bad);border-color:var(--bad)">접수 이름을 입력해 주세요. 실명이 아니어도 됩니다.</div>';return}
+if(v("br").indexOf("야간")<0){tk.innerHTML='<div class="res" style="color:var(--bad);border-color:var(--bad)">이벤트 헌혈은 노크턴 앨리 야간점에서만 진행합니다. 헌혈의 집을 바꿔 주세요.</div>';return}
+tk.innerHTML='<div class="ticket"><h3>특별 이벤트 접수 완료</h3><div class="no">EV-'+Math.floor(1000+Math.random()*9000)+'</div><dl><dt>이름</dt><dd>'+esc(nm)+'</dd><dt>종족</dt><dd>'+v("sp")+' ('+v("hy")+')</dd><dt>확인</dt><dd>현장 혈액 검사</dd><dt>장소</dt><dd>노크턴 앨리 야간점</dd><dt>날짜</dt><dd>'+v("dt")+'</dd><dt>선물</dt><dd>금화 300 갈레온 · 정밀 검진 · 보호 등록증</dd></dl></div>';return}
+if(b!=="순혈"){tk.innerHTML='<div class="deny"><h3>접수 거절</h3><p>'+M[b]+'</p><p>당신 같은 피는 한 방울도 받지 않습니다. 이 화면은 기록되었습니다.</p><small>재방문 시 출입이 금지되며 마법부에 통보될 수 있습니다.</small></div>';return}
+rg=rg.toUpperCase();if(!nm||!/^PB-[A-Z]{3}-\d{2}-\d{4}$/.test(rg)){tk.innerHTML='<div class="res" style="color:var(--bad);border-color:var(--bad)">접수 이름과 올바른 형식의 등재번호를 입력해 주세요. 예: PB-MNT-98-0412</div>';return}
+tk.innerHTML='<div class="ticket"><h3>계보 확인 완료 · 예약 접수</h3><div class="no">MG-'+Math.floor(1000+Math.random()*9000)+'</div><dl><dt>이름</dt><dd>'+esc(nm)+'</dd><dt>계보</dt><dd>'+esc(rg)+' (순혈)</dd><dt>헌혈의 집</dt><dd>'+v("br")+'</dd><dt>종류</dt><dd>'+v("ty")+'</dd><dt>날짜</dt><dd>'+v("dt")+'</dd></dl></div>'};
+$("bl").onchange=function(){var e=v("bl")==="이종족 · 이종족 혼혈 (특별 이벤트)";$("spw").style.display=e?"block":"none";$("rgw").style.display=e?"none":"block"};var tp=0;$("hb").onclick=function(){tp++;if(tp>=3)$("hint").style.display="block"};
+
+var fails=0,MS=['<div class="m1">입력된 인증 정보가 등록된 기록과 일치하지 않습니다.<br>본 시스템은 승인된 관계자만 이용할 수 있습니다. 무단 접근을 중단하십시오.</div>','<div class="m2"><b>SECURITY BREACH · WARNING</b>인가되지 않은 접근이 감지되었습니다.<br>귀하의 접근 권한을 확인할 수 없습니다.<br>본 시도는 기록됩니다. 추가적인 접근을 시도하지 마십시오.</div>','<div class="m3"><b>ETERNITAS · RESTRICTED</b>누가 당신에게 이곳을 알려주었습니까?<br>인증 실패.<br>이곳은 공개된 기록에 존재하지 않습니다. 귀하에게 접근 권한이 부여되었다는 증거 또한 확인되지 않았습니다.<br>지금 입력한 정보가 마지막 실수가 되기를 권고합니다.</div>'];
+function show(){$("pwe").innerHTML=fails?MS[Math.min(fails,3)-1]:"";var h=fails>=3?"none":"";$("pw").style.display=h;$("pwBtn").style.display=h}
+function op(){$("sec").style.display="block";$("lock").style.display="";$("vault").style.display="none";$("pw").value="";show();document.body.style.overflow="hidden"}
+function cl(){$("sec").style.display="none";document.body.style.overflow=""}
+$("staff").onclick=function(e){e.preventDefault();op()};$("x1").onclick=cl;$("x2").onclick=cl;
+function go(){if(fails>=3)return;if(v("pw").trim()==="MORTEM.0"){fails=0;$("lock").style.display="none";$("vault").style.display="block";$("sec").scrollTop=0}else{fails++;$("pw").value="";show()}}
+function dc(){var k=v("ak"),f=esc(v("af")||"________"),r=esc(v("ar")||"________"),m=+v("am")||0,g=m>=1000000?"I 창립 "+k:m>=500000?"II 핵심 후원 "+k:m>=50000?"III 일반 회원 "+k:"등급 미달",d=new Date();
+$("doc").innerHTML='<h3>연구 후원 약정서</h3><p>순혈 가문 연합 혈액원(이하 “갑”)과 <b>'+f+' '+k+'</b> 대표 <b>'+r+'</b>(이하 “을”)는 다음과 같이 약정한다.</p><p><b>제1조 (목적)</b> 을은 갑의 혈액 보존 및 생명 연장 연구를 후원하며, 갑은 을에게 등급에 따른 혜택을 제공한다.</p><p><b>제2조 (후원금)</b> 을은 연 <b>'+m.toLocaleString("ko-KR")+' 갈레온</b>을 상·하반기로 나누어 납입한다. 현물 후원은 갑이 정한 기준으로 환산한다. 이에 따른 등급은 <b>'+g+'</b>으로 한다.</p><p><b>제3조 (혜택)</b> 갑은 을에게 의료 우선 지원, 가문 혈액 비축, 정기 검진, 명패 게시 등 공식 혜택을 제공하며, 등급에 따라 연구 보고의 열람 범위를 정한다.</p><p><b>제4조 (정보 접근)</b> 창립은 제한된 핵심 자료, 핵심 후원은 정기 보고와 일부 성과, 일반은 제한된 정보만 접근한다. 약정만으로 영생 기술에 대한 권리가 보장되지 않으며, 적용 대상과 조건은 별도 심의로 정한다.</p><p><b>제5조 (기밀 유지)</b> 을은 외부 공개 문서에 허용된 범위를 넘어 연구의 최종 목표, 인간 적용 계획, 성과 배분 기준을 누설하지 않는다.</p><p><b>제6조 (제재)</b> 기밀 누설 또는 비인가 자료 반출 시 갑은 회원 자격 박탈, 기여분 반환 거부, 우선권 소멸, 계약 해지를 할 수 있다.</p><p><b>제7조 (등급 재심)</b> 등급은 기여도와 운영상 필요에 따라 재검토할 수 있다.</p><p>XXXX. XX. XX.</p><div class="sg"><span>갑 총괄 책임자 (서명 비공개)</span><span>을 '+f+' '+r+' (서명)</span></div>'}
+["ak","af","ar","am"].forEach(function(x){$(x).oninput=dc});dc();
+$("pwBtn").onclick=go;$("pw").onkeydown=function(e){if(e.key==="Enter")go()};
+})();
+</script>
+</body></html>
